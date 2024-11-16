@@ -20,7 +20,6 @@
 
     <dependencies>
 
-
         <!-- AWS dependencies-->
         <dependency>
             <groupId>com.amazonaws</groupId>
@@ -43,14 +42,22 @@
             <version>2.10</version>
         </dependency>
 
-
-        <!--Syndicate annotations-->
+        <!-- Syndicate annotations-->
         <dependency>
             <groupId>net.sf.aws-syndicate</groupId>
             <artifactId>deployment-configuration-annotations</artifactId>
             <version>${syndicate.java.plugin.version}</version>
         </dependency>
 
+        <!-- Replace systemPath dependency with regular dependency if available in Maven Central-->
+        <dependency>
+            <groupId>com.open_meteo</groupId>
+            <artifactId>open_meteo_api</artifactId>
+            <version>1.0.1</version>
+        </dependency>
+
+        <!-- If the open_meteo_api JAR is not available in a Maven repository, you can manually install it to your local Maven repository:-->
+        <!--
         <dependency>
             <groupId>com.open_meteo</groupId>
             <artifactId>open_meteo_api</artifactId>
@@ -58,7 +65,7 @@
             <scope>system</scope>
             <systemPath>${basedir}/lib/open-meteo-1.0.1.jar</systemPath>
         </dependency>
-
+        -->
     </dependencies>
 
     <build>
